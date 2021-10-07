@@ -1,0 +1,190 @@
+object Form13: TForm13
+  Left = 0
+  Top = 0
+  Caption = 'Form13'
+  ClientHeight = 524
+  ClientWidth = 463
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object SwitchOpen: TSwitch
+    Align = Bottom
+    IsChecked = False
+    Margins.Left = 180.000000000000000000
+    Margins.Right = 180.000000000000000000
+    Position.X = 180.000000000000000000
+    Position.Y = 443.000000000000000000
+    Size.Width = 103.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    OnSwitch = SwitchOpenSwitch
+    object Label1: TLabel
+      Position.X = -152.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 27.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Open Dataset'
+      TabOrder = 0
+    end
+  end
+  object ListView1: TListView
+    ItemAppearanceClassName = 'TDynamicAppearance'
+    ItemEditAppearanceClassName = 'TDynamicAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    OnUpdateObjects = ListView1UpdateObjects
+    Align = Client
+    Size.Width = 463.000000000000000000
+    Size.Height = 443.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Leading
+        Appearance.Width = 337.000000000000000000
+        Appearance.Height = 20.000000000000000000
+        Appearance.PlaceOffset.X = 102.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Text3'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.TextAlign = Leading
+        Appearance.WordWrap = True
+        Appearance.Trimming = Character
+        Appearance.Width = 338.000000000000000000
+        Appearance.Height = 19.000000000000000000
+        Appearance.PlaceOffset.X = 101.000000000000000000
+        Appearance.PlaceOffset.Y = 22.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Image'
+        AppearanceClassName = 'TImageObjectAppearance'
+        Appearance.Width = 90.000000000000000000
+        Appearance.Height = 40.000000000000000000
+        Appearance.VertAlign = Center
+      end>
+    ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+      end>
+    ItemAppearanceObjects.HeaderObjects.Text.Font.StyleExt = {00070000000000000004000000}
+    ItemAppearanceObjects.HeaderObjects.Text.TextColor = claMidnightblue
+  end
+  object SwitchSize: TSwitch
+    Align = Bottom
+    IsChecked = False
+    Margins.Left = 180.000000000000000000
+    Margins.Right = 180.000000000000000000
+    Position.X = 180.000000000000000000
+    Position.Y = 470.000000000000000000
+    Size.Width = 103.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    OnSwitch = SwitchOpenSwitch
+    object Label2: TLabel
+      Position.X = -152.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 27.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Resize Items'
+      TabOrder = 0
+    end
+  end
+  object SwitchAddImage: TSwitch
+    Align = Bottom
+    IsChecked = False
+    Margins.Left = 180.000000000000000000
+    Margins.Right = 180.000000000000000000
+    Position.X = 180.000000000000000000
+    Position.Y = 497.000000000000000000
+    Size.Width = 103.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    OnSwitch = SwitchAddImageSwitch
+    object Label3: TLabel
+      Position.X = -152.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 27.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Add Image'
+      TabOrder = 0
+    end
+  end
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    FileName = 
+      'C:\Users\Public\Documents\Embarcadero\Studio\21.0\Samples\Data\b' +
+      'iolife.cds'
+    IndexFieldNames = 'Category;Common_Name'
+    Params = <>
+    Left = 88
+    Top = 148
+    object ClientDataSet1SpeciesNo: TFloatField
+      FieldName = 'Species No'
+    end
+    object ClientDataSet1Category: TStringField
+      FieldName = 'Category'
+      Size = 15
+    end
+    object ClientDataSet1Common_Name: TStringField
+      FieldName = 'Common_Name'
+      Size = 30
+    end
+    object ClientDataSet1SpeciesName: TStringField
+      FieldName = 'Species Name'
+      Size = 40
+    end
+    object ClientDataSet1Lengthcm: TFloatField
+      FieldName = 'Length (cm)'
+    end
+    object ClientDataSet1Length_In: TFloatField
+      FieldName = 'Length_In'
+    end
+    object ClientDataSet1Notes: TMemoField
+      FieldName = 'Notes'
+      BlobType = ftMemo
+      Size = 50
+    end
+    object ClientDataSet1Graphic: TGraphicField
+      FieldName = 'Graphic'
+      BlobType = ftGraphic
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = ClientDataSet1
+    ScopeMappings = <>
+    Left = 216
+    Top = 248
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 220
+    Top = 117
+    object Link2ListView: TLinkFillControlToField
+      Category = 'Liaisons rapides'
+      Control = ListView1
+      Track = False
+      FillDataSource = BindSourceDB1
+      AutoFill = True
+      FillExpressions = <
+        item
+          SourceMemberName = 'Common_Name'
+          ControlMemberName = 'Text1'
+        end
+        item
+          SourceMemberName = 'Notes'
+          ControlMemberName = 'Text3'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+end
