@@ -10,3 +10,6 @@ with 10.4.2 (I don't do the test with 10.4 and 10.4.1) IDE freeze, and computer 
 Something wrong in TImageObjectAppearance or TListItemImage ? Removing image seems to confirm that impression. 
 
 https://quality.embarcadero.com/browse/RSP-33360
+
+
+Update : Bypass creating Binding link at runtime
